@@ -1,0 +1,396 @@
+{
+  "display_config": {
+    "version": "1.1",
+    "allow_display_adjustment": true,
+    "panels": [
+      {
+        "id": 0,
+        "type": "menu",
+        "title": "Main Menu",
+        "buttons": [
+          {
+            "id": 1,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "display_panel_id",
+              "do": "set",
+              "amount": 1
+            },
+            "text": "Current Control",
+            "event_dest": "uc"
+          },
+          {
+            "id": 2,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "display_panel_id",
+              "do": "set",
+              "amount": 2
+            },
+            "text": "Enable + Warn Lamp",
+            "event_dest": "uc"
+          },
+          {
+            "id": 3,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "display_panel_id",
+              "do": "set",
+              "amount": 3
+            },
+            "text": "Charger Control",
+            "event_dest": "uc"
+          },
+          {
+            "id": 4,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "display_panel_id",
+              "do": "set",
+              "amount": 4
+            },
+            "text": "SCR Control",
+            "event_dest": "uc"
+          },
+          {
+            "id": 5,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "display_panel_id",
+              "do": "set",
+              "amount": 5
+            },
+            "text": "Waveform Control",
+            "event_dest": "uc"
+          }
+        ],
+        "labels": [
+          {
+            "id": 1,
+            "text": "Go to Voltage and Current Control"
+          },
+          {
+            "id": 2,
+            "text": "Go to Enable + Warn Lamp"
+          }
+        ],
+        "values": []
+      },
+      {
+        "id": 1,
+        "type": "control",
+        "title": "Current Control",
+        "buttons": [
+        ],
+        "labels": [
+          {
+            "id": 1,
+            "text": "Voltage:",
+            "visible": true,
+            "color": "white"
+          },
+          {
+            "id": 9,
+            "text": " V",
+            "visible": true,
+            "color": "white"
+          },
+          {
+            "id": 2,
+            "text": "Set Charge Voltage:",
+            "visible": true,
+            "color": "white"
+          },
+          {
+            "id":10,
+            "text": " V",
+            "visible": true,
+            "color": "white"
+          },
+          {
+            "id": 3,
+            "text": "Current:",
+            "visible": true,
+            "color": "white"
+          },
+          {
+            "id": 11,
+            "text": " A",
+            "visible": true,
+            "color": "white"
+          }
+        ],
+        "values": [
+          {
+            "id": 1,
+            "name": "volt_act",
+            "type": "float",
+            "display_format": "%.2f",
+            "min_val": 0,
+            "max_val": 100000,
+            "upper_green_val": 100000,
+            "lower_red_val": 0,
+            "upper_override_val": 100000,
+            "upper_override_text": "OVER LIMIT",
+            "lower_override_val": 0,
+            "lower_override_text": "UNDER LIMIT",
+            "default_color": "blue",
+            "default_value": 0
+          },
+          {
+            "id": 2,
+            "name": "volt_charge_set",
+            "type": "float",
+            "display_format": "%.2f",
+            "min_val": 0,
+            "max_val": 100,
+            "upper_green_val": 100,
+            "lower_red_val": 0,
+            "upper_override_val": 100,
+            "upper_override_text": "OVER LIMIT",
+            "lower_override_val": 0,
+            "lower_override_text": "UNDER LIMIT",
+            "default_color": "blue",
+            "default_value": 0
+          },
+          {
+            "id": 3,
+            "name": "curr_act",
+            "type": "float",
+            "display_format": "%.2f",
+            "min_val": 40,
+            "max_val": 400,
+            "upper_green_val": 360,
+            "lower_red_val": 40,
+            "upper_override_val": 360,
+            "upper_override_text": "OVER LIMIT",
+            "lower_override_val": 40,
+            "lower_override_text": "UNDER LIMIT",
+            "default_color": "blue",
+            "default_value": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "control",
+        "title": "Enable + Warn Lamp",
+        "buttons": [
+          {
+            "id": 1,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "inter_enable",
+              "do": "set",
+              "amount": 1
+            },
+            "text": "Internal Enable ON",
+            "event_dest": "uc"
+          },
+          {
+            "id": 2,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "inter_enable",
+              "do": "set",
+              "amount": 0
+            },
+            "text": "Internal Enable OFF",
+            "event_dest": "uc"
+          },
+          {
+            "id": 3,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "warn_lamp",
+              "do": "set",
+              "amount": 1
+            },
+            "text": "Warn Lamp ON",
+            "event_dest": "uc"
+          },
+          {
+            "id": 4,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "warn_lamp",
+              "do": "set",
+              "amount": 0
+            },
+            "text": "Warn Lamp OFF",
+            "event_dest": "uc"
+          }
+        ],
+        "labels": [
+          {
+            "id": 1,
+            "text": "Internal Enable:",
+            "visible": true,
+            "color": "white"
+          },
+          {
+            "id": 2,
+            "text": "External Enable:",
+            "visible": true,
+            "color": "white"
+          },
+          {
+            "id": 3,
+            "text": "Warn Lamp:",
+            "visible": true,
+            "color": "white"
+          },
+          {
+            "id": 4,
+            "text": "Output Enable:",
+            "visible": true,
+            "color": "white"
+          }
+        ],
+        "values": [
+          {
+            "id": 1,
+            "name": "inter_enable",
+            "type": "float",
+            "display_format": "%.2f",
+            "max_val": 1,
+            "min_val": 0,
+            "upper_green_val": 1,
+            "lower_red_val": -1,
+            "upper_override_val": 2,
+            "upper_override_text": "OVER LIMIT",
+            "lower_override_val": -2,
+            "lower_override_text": "UNDER LIMIT",
+            "default_color": "blue",
+            "default_value": 0
+          },
+          {
+            "id": 2,
+            "name": "extern_enable",
+            "type": "float",
+            "display_format": "%.2f",
+            "max_val": 1,
+            "min_val": 0,
+            "upper_green_val": 1,
+            "lower_red_val": -1,
+            "default_color": "blue",
+            "default_value": 1
+          },
+          {
+            "id": 3,
+            "name": "warn_lamp",
+            "type": "float",
+            "display_format": "%.2f",
+            "max_val": 1,
+            "min_val": 0,
+            "upper_green_val": 2,
+            "lower_red_val": -2,
+            "upper_override_val": 2,
+            "upper_override_text": "OVER LIMIT",
+            "lower_override_val": -2,
+            "lower_override_text": "UNDER LIMIT",
+            "default_color": "blue",
+            "default_value": 0
+          },
+          {
+            "id": 4,
+            "name": "output_enable",
+            "type": "float",
+            "display_format": "%.2f",
+            "max_val": 1,
+            "min_val": 0,
+            "upper_green_val": 1,
+            "lower_red_val": -1,
+            "default_color": "blue",
+            "default_value": 0
+          }
+        ]
+      }
+      , 
+            {
+        "id": 3,
+        "type": "control",
+        "title": "Charger Control",
+        "buttons": [
+          {
+            "id": 4,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "mode_set",
+              "do": "set",
+              "amount": 1
+            },
+            "text": "Remote Mode",
+            "event_dest": "uc"
+          },
+          {
+            "id": 5,
+            "visible": true,
+            "disable": false,
+            "action": {
+              "name": "mode_set",
+              "do": "set",
+              "amount": 0
+            },
+            "text": "Local Mode",
+            "event_dest": "uc"
+          }
+        ],
+        "labels": [
+          {
+            "id": 7,
+            "name": "mode_set",
+            "type": "float",
+            "display_format": "%.0f",
+            "min_val": 0,
+            "max_val": 1,
+            "upper_green_val": 1,
+            "lower_red_val": 0,
+            "default_color": "blue",
+            "default_value": 0
+          }
+        ]
+      }
+        ]
+
+      }
+    ],
+    "params_linux": {
+      "update_display_sensor_refresh_rate_ms": 10
+    }
+  },
+  ],
+  "signals": {
+    "true_values": {
+      "SW_GET_VERSION": 0,
+      "volt_set": 0, "curr_set": 0, "volt_act": 0, "curr_act": 0,
+      "inter_enable": 0, "extern_enable": 1, "output_enable": 0,
+      "warn_lamp": 0
+    },
+    "signal_ids": {
+      "SW_GET_VERSION": "0x01",
+      "volt_set": "0x04", "curr_set": "0x05", "volt_act": "0x06", "curr_act": "0x07",
+      "mode_set": "0x08", "inter_enable": "0x09", "extern_enable": "0x0A",
+    },
+    "expected_types": {
+      "volt_act": ["float", "int"],
+      "curr_act": ["float", "int"],
+      "extern_enable": ["int", "bool"],
+      "inter_enable": ["int", "bool"],
+    },
+    "bool_names": [
+      "extern_enable", "inter_enable", "warn_lamp"
+    ]
+  }
+
+}

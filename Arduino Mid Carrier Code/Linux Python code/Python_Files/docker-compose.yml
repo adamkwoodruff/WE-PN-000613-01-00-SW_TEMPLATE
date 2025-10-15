@@ -1,0 +1,24 @@
+version: '3'
+services:
+  portenta-bridge:
+    container_name: portenta_linux_bridge
+    restart: always
+    build: .
+    devices:
+      - "/dev/ttymxc1:/dev/ttymxc1"
+      - "/dev/ttymxc2:/dev/ttymxc2" 
+      - "/dev/ttymxc3:/dev/ttymxc3" 
+    privileged: true  # Expose UART to the container
+    ports:
+      - "5010:5000"  # Expose RPC port
+      - "10001:10001/udp"  # Forward UDP packets to the Portenta bridge 
+      - "10006:10006/udp" 
+      - "10016:10016/udp"
+      - "17751:17751/udp"
+    environment:
+     - UART_PORTS=/dev/ttymxc1,/dev/ttymxc2,/dev/ttymxc3
+      
+    tty: true 
+    extra_hosts:
+     - "m4-proxy:host-gateway"
+
